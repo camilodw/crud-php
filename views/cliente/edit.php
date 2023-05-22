@@ -1,18 +1,18 @@
 <?php
 include("../../db.php");
-$nombre = '';
-$apellido1 = '';
-$apellido2 = '';
+$nombre     = '';
+$apellido1  = '';
+$apellido2  = '';
 
 if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $query = "SELECT * FROM cliente WHERE id=$id";
+    $id     = $_GET['id'];
+    $query  = "SELECT * FROM cliente WHERE id=$id";
     $result = mysqli_query($conn, $query);
     if (mysqli_num_rows($result) == 1) {
-        $row = mysqli_fetch_array($result);
-        $nombre = $row['nombre'];
-        $apellido1 = $row['apellido1'];
-        $apellido2 = $row['apellido2'];
+        $row        = mysqli_fetch_array($result);
+        $nombre     = $row['nombre'];
+        $apellido1  = $row['apellido1'];
+        $apellido2  = $row['apellido2'];
     }
 }
 
